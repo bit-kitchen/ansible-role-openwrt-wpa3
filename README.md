@@ -1,6 +1,9 @@
 ansible-role-openwrt-wpa3
 =========================
 
+[![Ansible Role: bit_kitchen.openwrt_wpa3](https://img.shields.io/ansible/role/49499.svg)](https://galaxy.ansible.com/bit_kitchen/openwrt_wpa3)
+[![Build Status: bit-kitchen/ansible-role-openwrt-wpa3](https://travis-ci.org/bit-kitchen/ansible-role-openwrt-wpa3.svg?branch=master)](https://travis-ci.org/bit-kitchen/ansible-role-openwrt-wpa3)
+
 ```sh
 ansible-galaxy install bit_kitchen.openwrt_wpa3
 ```
