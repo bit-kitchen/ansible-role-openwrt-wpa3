@@ -1,0 +1,24 @@
+---
+- name: Check OpenWrt version
+  fail:
+    msg: WPA3 is only supported since OpenWrt 19.07
+  when:
+  - ansible_distribution is defined
+  - ansible_distribution != "OpenWrt"
+  - ansible_distribution_version is defined
+  - ansible_distribution_version is version ("19.07", "<")
+
+- name: Remove conflicting packages
+  opkg:
+    name: hostapd,hostapd-basic,hostapd-mini,wpad,wpad-basic,wpad-mini
+    state: absent
+    update_cache: yes
+
+- name: Install wpad-{{ openwrt_ssl }}
+  opkg:
+    name: wpad-{{ openwrt_ssl }}
+  register: install_wpad_ssl
+
+- name: Check if reboot is required
+  debug:
+    msg: "{{ 'Reboot of OpenWrt required.' if install_wpad_ssl.changed else 'Reboot not required.' }}"
