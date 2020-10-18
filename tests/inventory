@@ -1,2 +1,3 @@
 [openwrt]
-openwrt.lan
+#openwrt.lan
+linksys.local.test.cab
