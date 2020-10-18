@@ -10,6 +10,7 @@ galaxy_info:
   galaxy_tags:
   - openwrt
   - wpa3
+  - sae
 
 dependencies:
 - name: gekmihesg.openwrt
